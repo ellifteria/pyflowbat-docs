@@ -481,7 +481,25 @@ defaults to 0.1</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.combine_replicates">
 <span class="sig-name descname"><span class="pre">combine_replicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">statistics_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combined_statistics_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combine_by</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combination_operations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sem_cols</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.combine_replicates" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Combines replicates in a statistics collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>statistics_collection_name</strong> (<em>str</em>) – the name of the statistics collection
+from which to combine replicates</p></li>
+<li><p><strong>combined_statistics_collection_name</strong> (<em>str</em>) – the name of the new statistics
+collection storing the combined statistics</p></li>
+<li><p><strong>combine_by</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – the statistics by which to combine replicates;
+each set of statistics is combined if all statistics here are
+equivalent</p></li>
+<li><p><strong>combination_operation</strong> – the function defining the operation
+by which to combine rows;
+may be a Pandas GroupBy function</p></li>
+<li><p><strong>**kwargs</strong> – keywords to pass to the combination operation</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.create_statistic_extraction">
