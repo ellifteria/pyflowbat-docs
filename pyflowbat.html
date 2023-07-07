@@ -366,7 +366,19 @@ defaults to True</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.apply_compensation_matrix">
 <span class="sig-name descname"><span class="pre">apply_compensation_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_sample_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.apply_compensation_matrix" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Applies the workspace compensation matrix to one sample collection creating another.
+NOTE: the workspace’s <cite>calculate_compensation_matrix</cite> method must be run before this
+method may be run.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sample_collection_name</strong> (<em>str</em>) – the name of the sample collection to compensate</p></li>
+<li><p><strong>new_sample_collection_name</strong> (<em>str</em>) – the name of the new sample collection to create
+for the compensated samples</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.apply_gate">
@@ -406,8 +418,36 @@ Spherotech RCP-30-5 Rainbow Calibration Beads</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.calculate_compensation_matrix">
-<span class="sig-name descname"><span class="pre">calculate_compensation_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compensation_samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compensation_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.calculate_compensation_matrix" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">calculate_compensation_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compensation_samples_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compensation_channel_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compensation_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.calculate_compensation_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates a compensation matrix by repeatedly flattening to zero
+the best fit line through the specified compensation sample data.
+Flattening stops once the best fit line has a slope under the provided
+threshold.
+NOTE: at present, only 2- and 3- sample compensation matrices can
+be calculated.
+NOTE: at present, flattening continues for all compensation samples
+as long as any compensation sample has a best fit slope greater than
+the threshold.
+NOTE: this method must always be run before the workspace’s
+<cite>apply_compensation_matrix</cite> method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sample_collection_name</strong> (<em>str</em>) – the name of the collection from
+which to find the samples for compensation matrix calculation</p></li>
+<li><p><strong>compensation_sample_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – the names of the samples used
+for compensation</p></li>
+<li><p><strong>compensation_channel_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – the channel names to be
+compensated</p></li>
+<li><p><strong>threshold</strong> (<em>float</em>) – the threshold to flatten the best fit
+lines to,
+defaults to 10**4</p></li>
+<li><p><strong>compensation_rate</strong> (<em>float</em>) – the rate at which to calculate the
+compensation matrix</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.combine_replicates">
