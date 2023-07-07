@@ -443,7 +443,8 @@ compensated</p></li>
 lines to,
 defaults to 10**4</p></li>
 <li><p><strong>compensation_rate</strong> (<em>float</em>) – the rate at which to calculate the
-compensation matrix</p></li>
+compensation matrix,
+defaults to 0.1</p></li>
 </ul>
 </dd>
 </dl>
@@ -509,7 +510,24 @@ defaults to True</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.load_samples">
 <span class="sig-name descname"><span class="pre">load_samples</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samples_folder_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">not_include</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.load_samples" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Loads samples from a folder into a sample collection in the workspace.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sample_collection_name</strong> (<em>str</em>) – the name of the sample collection
+into which to load samples</p></li>
+<li><p><strong>samples_folder_path</strong> (<em>str</em>) – the path to the folder with the samples
+to load</p></li>
+<li><p><strong>include</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – the list of keywords in the names of files
+that must be present to load, all keywords must be
+present in a file’s name to load as a sample</p></li>
+<li><p><strong>not_include</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – the list of keywords in the names of files
+that must not be present to load, all keywords must not be
+present in a file’s name to load as a sample</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.visualize_plot_change">
