@@ -509,7 +509,20 @@ defaults to 0.1</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.extract_statistic">
 <span class="sig-name descname"><span class="pre">extract_statistic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extraction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyflowbat.pyflowbat.StatisticsExtraction" title="pyflowbat.pyflowbat.StatisticsExtraction"><span class="pre">pyflowbat.pyflowbat.StatisticsExtraction</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">statistc_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.extract_statistic" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Extracts a statistic for a StatisticExtraction rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extraction</strong> (<a class="reference internal" href="#pyflowbat.pyflowbat.StatisticsExtraction" title="pyflowbat.pyflowbat.StatisticsExtraction"><em>pyflowbat.pyflowbat.StatisticsExtraction</em></a>) – the StatisticExtraction rule to use for the
+extraction</p></li>
+<li><p><strong>statistc_name</strong> (<em>str</em>) – the name of the statistic being created</p></li>
+<li><p><strong>operation</strong> (<em>function/Callable</em>) – the function defining the operation defining
+the extraction</p></li>
+<li><p><strong>**kwargs</strong> – keywords to pass to the operation</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.graph_statistics">
