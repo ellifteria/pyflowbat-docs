@@ -89,23 +89,122 @@
 <span id="pyflowbat-gating-module"></span><h2>pyflowbat.gating module<a class="headerlink" href="#module-pyflowbat.gating" title="Permalink to this headline"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyflowbat.gating.find_percentile">
-<span class="sig-prename descclassname"><span class="pre">pyflowbat.gating.</span></span><span class="sig-name descname"><span class="pre">find_percentile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyflowbat.pyflowbat.Workspace" title="pyflowbat.pyflowbat.Workspace"><span class="pre">pyflowbat.pyflowbat.Workspace</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_collection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#pyflowbat.gating.find_percentile" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">pyflowbat.gating.</span></span><span class="sig-name descname"><span class="pre">find_percentile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyflowbat.pyflowbat.Workspace" title="pyflowbat.pyflowbat.Workspace"><span class="pre">pyflowbat.pyflowbat.Workspace</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#pyflowbat.gating.find_percentile" title="Permalink to this definition"></a></dt>
+<dd><p>Finds the specified percentile of the data in a given channel
+a PyFlowBAT sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>workspace</strong> (<a class="reference internal" href="#pyflowbat.pyflowbat.Workspace" title="pyflowbat.pyflowbat.Workspace"><em>pyflowbat.pyflowbat.Workspace</em></a>) – the PyFlowBAT Workspace containing the sample
+whose percentile is desired.</p></li>
+<li><p><strong>sample_collection_name</strong> (<em>str</em>) – the name of the sample collection
+containing the sample whose percentile is desired</p></li>
+<li><p><strong>sample_name</strong> (<em>str</em>) – the name of the sample whose percentile
+is desired</p></li>
+<li><p><strong>channel_name</strong> (<em>str</em>) – the name of the channel whose percentile
+is desired</p></li>
+<li><p><strong>percentile</strong> (<em>float</em>) – the desired percentile</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the desired percentile of the data in the specified channel
+of the PyFlowBAT sample</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyflowbat.gating.gate_heks">
-<span class="sig-prename descclassname"><span class="pre">pyflowbat.gating.</span></span><span class="sig-name descname"><span class="pre">gate_heks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_to_gate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyflowbat.gating.gate_heks" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">pyflowbat.gating.</span></span><span class="sig-name descname"><span class="pre">gate_heks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_to_gate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FlowCal.io.FCSData</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'same'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FlowCal.io.FCSData</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyflowbat.gating.gate_heks" title="Permalink to this definition"></a></dt>
+<dd><p>Gates all samples in a collection for HEK 293FT by finding the
+most extreme valleys in the FSC-A and SSC-A channels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_to_gate</strong> (<em>pyflowbat.pyflowbat.SampleCollection</em>) – the PyFlowBAT sample collection to gate;
+NOTE: this parameter is provided to by the
+<cite>pyflowbat.pyflowbat.Workspace.apply_gate</cite> method and should
+NOT be specified by the user</p></li>
+<li><p><strong>limits</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>list</em><em>[</em><em>float</em><em>]</em><em>]</em>) – the limits of the FSC-A and SSC-A channels;
+NOTE: this parameter is provided to by the
+<cite>pyflowbat.pyflowbat.Workspace.apply_gate</cite> method and should
+NOT be specified by the user, to specify this parameter’s
+value, change the value of <cite>limits</cite> within the Workspace in
+which this gate is being applied</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – whether or not to use a unique gate for each
+sample in the collection or the same gate for all samples,
+options are “unique” or “same”,
+defaults to “same”</p></li>
+<li><p><strong>samples</strong> (<em>Optional</em><em>[</em><em>list</em><em>[</em><em>str</em><em>]</em><em>]</em>) – the samples to use to define the gate if the
+“same” method is used,
+defaults to None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the gated PyFlowBAT sample collection</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pyflowbat.pyflowbat.SampleCollection</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyflowbat.gating.gate_high_low">
-<span class="sig-prename descclassname"><span class="pre">pyflowbat.gating.</span></span><span class="sig-name descname"><span class="pre">gate_high_low</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_to_gate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyflowbat.gating.gate_high_low" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">pyflowbat.gating.</span></span><span class="sig-name descname"><span class="pre">gate_high_low</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_to_gate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FlowCal.io.FCSData</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gating_channel_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FlowCal.io.FCSData</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyflowbat.gating.gate_high_low" title="Permalink to this definition"></a></dt>
+<dd><p>Gates all samples in a collection within an upper and lower
+bound in a specified channel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_to_gate</strong> (<em>pyflowbat.pyflowbat.SampleCollection</em>) – the PyFlowBAT sample collection to gate;
+NOTE: this parameter is provided to by the
+<cite>pyflowbat.pyflowbat.Workspace.apply_gate</cite> method and should
+NOT be specified by the user</p></li>
+<li><p><strong>gating_channel_name</strong> (<em>str</em>) – the name of the channel to gate
+the samples</p></li>
+<li><p><strong>high</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – the upper bound</p></li>
+<li><p><strong>low</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – the lower bound</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the gated PyFlowBAT sample collection</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pyflowbat.pyflowbat.SampleCollection</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyflowbat.gating.gate_singlets">
-<span class="sig-prename descclassname"><span class="pre">pyflowbat.gating.</span></span><span class="sig-name descname"><span class="pre">gate_singlets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_to_gate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10000000000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20000</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyflowbat.gating.gate_singlets" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">pyflowbat.gating.</span></span><span class="sig-name descname"><span class="pre">gate_singlets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_to_gate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FlowCal.io.FCSData</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10000000000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20000</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FlowCal.io.FCSData</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyflowbat.gating.gate_singlets" title="Permalink to this definition"></a></dt>
+<dd><p>Gates all samples in a collection for singlets by drawing a tilted
+ellipse.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_to_gate</strong> (<em>pyflowbat.pyflowbat.SampleCollection</em>) – the PyFlowBAT sample collection to gat
+NOTE: this parameter is provided to by the
+<cite>pyflowbat.pyflowbat.Workspace.apply_gate</cite> method and should
+NOT be specified by the user</p></li>
+<li><p><strong>a</strong> (<em>float</em>) – the long axis of the ellipse surrounding the singlets,
+defaults to 1*10**10</p></li>
+<li><p><strong>b</strong> (<em>float</em>) – the short axis of the ellipse surrounding the singlets,
+defaults to 2*10**4</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the gated PyFlowBAT sample collection</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pyflowbat.pyflowbat.SampleCollection</p>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 <section id="module-pyflowbat.operations">
@@ -113,33 +212,39 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="pyflowbat.operations.apply_conversion_factor">
 <span class="sig-prename descclassname"><span class="pre">pyflowbat.operations.</span></span><span class="sig-name descname"><span class="pre">apply_conversion_factor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#pyflowbat.operations.apply_conversion_factor" title="Permalink to this definition"></a></dt>
-<dd><p>Given a number x and a conversion factor, returns x multiplied by the factor</p>
+<dd><p>Given a number x and a conversion factor, returns x multiplied by the factor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> – the value to convert</p></li>
-<li><p><strong>factor</strong> – the conversion factor to apply to x</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – the value to convert</p></li>
+<li><p><strong>factor</strong> (<em>float</em>) – the conversion factor to apply to x</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>x multiplied by the conversion factor</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyflowbat.operations.channel_mean">
-<span class="sig-prename descclassname"><span class="pre">pyflowbat.operations.</span></span><span class="sig-name descname"><span class="pre">channel_mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#pyflowbat.operations.channel_mean" title="Permalink to this definition"></a></dt>
-<dd><p>Computes the mean value of a given channel of FCS data</p>
+<span class="sig-prename descclassname"><span class="pre">pyflowbat.operations.</span></span><span class="sig-name descname"><span class="pre">channel_mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FlowCal.io.FCSData</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#pyflowbat.operations.channel_mean" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the mean value of a given channel of FCS data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> – the FCS data with the desired mean</p></li>
-<li><p><strong>channel</strong> – the channel of the desired mean</p></li>
+<li><p><strong>data</strong> (<em>FlowCal.io.FCSData</em>) – the FCS data with the desired mean</p></li>
+<li><p><strong>channel_name</strong> (<em>str</em>) – the name of the channel of the desired mean</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>the mean value of the specified channel of the specified FCS sample</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
 </dd>
 </dl>
 </dd></dl>
@@ -147,17 +252,20 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="pyflowbat.operations.compute_conversion_factor_stdErr">
 <span class="sig-prename descclassname"><span class="pre">pyflowbat.operations.</span></span><span class="sig-name descname"><span class="pre">compute_conversion_factor_stdErr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor_err</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#pyflowbat.operations.compute_conversion_factor_stdErr" title="Permalink to this definition"></a></dt>
-<dd><p>Computes the standard error of the conversion factor multiplication</p>
+<dd><p>Computes the standard error of the conversion factor multiplication.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> – the value being converted</p></li>
-<li><p><strong>factor</strong> – the conversion factor being applied</p></li>
-<li><p><strong>factor_err</strong> – the standard error of the conversion factor</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – the value being converted</p></li>
+<li><p><strong>factor</strong> (<em>float</em>) – the conversion factor being applied</p></li>
+<li><p><strong>factor_err</strong> (<em>float</em>) – the standard error of the conversion factor</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>the standard error of the conversion</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
 </dd>
 </dl>
 </dd></dl>
@@ -165,13 +273,16 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="pyflowbat.operations.non_negative">
 <span class="sig-prename descclassname"><span class="pre">pyflowbat.operations.</span></span><span class="sig-name descname"><span class="pre">non_negative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#pyflowbat.operations.non_negative" title="Permalink to this definition"></a></dt>
-<dd><p>Given a number x, returns the x if x is non-negative and 0 otherwise</p>
+<dd><p>Given a number x, returns the x if x is non-negative and 0 otherwise.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>x</strong> – a number</p>
+<dd class="field-odd"><p><strong>x</strong> (<em>float</em>) – a number</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>x if x is non-negative, else 0</p>
+<dd class="field-even"><p>x if x is non-negative and 0 otherwise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
 </dd>
 </dl>
 </dd></dl>
@@ -179,17 +290,20 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="pyflowbat.operations.split_sample_name">
 <span class="sig-prename descclassname"><span class="pre">pyflowbat.operations.</span></span><span class="sig-name descname"><span class="pre">split_sample_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pyflowbat.operations.split_sample_name" title="Permalink to this definition"></a></dt>
-<dd><p>Splits a string by a character</p>
+<dd><p>Splits a string by a character.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>str</strong> – the string to split</p></li>
-<li><p><strong>by</strong> – the character to split by</p></li>
-<li><p><strong>index</strong> – the index of the split string to return</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – the string to split</p></li>
+<li><p><strong>by</strong> (<em>str</em>) – the character to split by</p></li>
+<li><p><strong>index</strong> (<em>int</em>) – the index of the split string to return</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>the string at the specified index of the provided string split by the specified character</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -197,6 +311,12 @@
 </section>
 <section id="module-pyflowbat.pyflowbat">
 <span id="pyflowbat-pyflowbat-module"></span><h2>pyflowbat.pyflowbat module<a class="headerlink" href="#module-pyflowbat.pyflowbat" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyflowbat.pyflowbat.StatisticsExtraction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyflowbat.pyflowbat.</span></span><span class="sig-name descname"><span class="pre">StatisticsExtraction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_collection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FlowCal.io.FCSData</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statistics_collection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pandas.core.frame.DataFrame</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">not_include</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyflowbat.pyflowbat.StatisticsExtraction" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyflowbat.pyflowbat.</span></span><span class="sig-name descname"><span class="pre">Workspace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stylesheet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{'axes.axisbelow':</span> <span class="pre">True,</span> <span class="pre">'axes.edgecolor':</span> <span class="pre">'B0B0B0',</span> <span class="pre">'axes.facecolor':</span> <span class="pre">'white',</span> <span class="pre">'axes.grid':</span> <span class="pre">True,</span> <span class="pre">'axes.labelsize':</span> <span class="pre">'large',</span> <span class="pre">'axes.linewidth':</span> <span class="pre">3.0,</span> <span class="pre">'axes.prop_cycle':</span> <span class="pre">cycler('color',</span> <span class="pre">['#0267c1',</span> <span class="pre">'#efa00b',</span> <span class="pre">'#00af54',</span> <span class="pre">'#e2cfea',</span> <span class="pre">'#d65108',</span> <span class="pre">'#6915E0',</span> <span class="pre">'#3DA5D9',</span> <span class="pre">'#FEC601',</span> <span class="pre">'#097109',</span> <span class="pre">'#EA7317',</span> <span class="pre">'#AF0BA5']),</span> <span class="pre">'axes.spines.bottom':</span> <span class="pre">False,</span> <span class="pre">'axes.spines.left':</span> <span class="pre">False,</span> <span class="pre">'axes.spines.right':</span> <span class="pre">False,</span> <span class="pre">'axes.spines.top':</span> <span class="pre">False,</span> <span class="pre">'axes.titlesize':</span> <span class="pre">'x-large',</span> <span class="pre">'figure.facecolor':</span> <span class="pre">'white',</span> <span class="pre">'figure.subplot.bottom':</span> <span class="pre">0.07,</span> <span class="pre">'figure.subplot.left':</span> <span class="pre">0.08,</span> <span class="pre">'figure.subplot.right':</span> <span class="pre">0.95,</span> <span class="pre">'font.family':</span> <span class="pre">['Nunito',</span> <span class="pre">'Lato',</span> <span class="pre">'Arial'],</span> <span class="pre">'font.size':</span> <span class="pre">14.0,</span> <span class="pre">'grid.color':</span> <span class="pre">'#B0B0B0',</span> <span class="pre">'grid.linestyle':</span> <span class="pre">':',</span> <span class="pre">'grid.linewidth':</span> <span class="pre">1.0,</span> <span class="pre">'legend.fancybox':</span> <span class="pre">True,</span> <span class="pre">'lines.linewidth':</span> <span class="pre">4,</span> <span class="pre">'lines.solid_capstyle':</span> <span class="pre">'butt',</span> <span class="pre">'patch.edgecolor':</span> <span class="pre">'white',</span> <span class="pre">'patch.linewidth':</span> <span class="pre">0.5,</span> <span class="pre">'savefig.edgecolor':</span> <span class="pre">'white',</span> <span class="pre">'savefig.facecolor':</span> <span class="pre">'white',</span> <span class="pre">'svg.fonttype':</span> <span class="pre">'path',</span> <span class="pre">'xtick.major.size':</span> <span class="pre">0,</span> <span class="pre">'xtick.minor.size':</span> <span class="pre">0,</span> <span class="pre">'ytick.major.size':</span> <span class="pre">0,</span> <span class="pre">'ytick.minor.size':</span> <span class="pre">0}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lims_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'_std'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">full_output</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace" title="Permalink to this definition"></a></dt>
@@ -233,27 +353,30 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.create_statistic_extraction">
-<span class="sig-name descname"><span class="pre">create_statistic_extraction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statistics_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">not_include</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statistic_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pyflowbat.pyflowbat._StatisticsExtraction</span></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.create_statistic_extraction" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">create_statistic_extraction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statistics_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">not_include</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statistic_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyflowbat.pyflowbat.StatisticsExtraction" title="pyflowbat.pyflowbat.StatisticsExtraction"><span class="pre">pyflowbat.pyflowbat.StatisticsExtraction</span></a></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.create_statistic_extraction" title="Permalink to this definition"></a></dt>
 <dd><p>Creates a rule needed for extracting statistics from a sample collection</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sample_collection</strong> – the name of the sample collection from which to extract</p></li>
-<li><p><strong>statistics_collection</strong> – the name of the statistics collection to create and extract statistics to</p></li>
-<li><p><strong>include</strong> – a list of words that must be included in the samples from which to extract statistics</p></li>
-<li><p><strong>not_include</strong> – a list of words that must NOT be included in the samples from which to extract statistics</p></li>
-<li><p><strong>statistic_names</strong> – a list of the stastics that will be extracted using this rule</p></li>
+<li><p><strong>sample_collection_name</strong> (<em>str</em>) – the name of the sample collection from which to extract</p></li>
+<li><p><strong>statistics_collection_name</strong> (<em>str</em>) – the name of the statistics collection to create and extract statistics to</p></li>
+<li><p><strong>include</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – a list of words that must be included in the samples from which to extract statistics</p></li>
+<li><p><strong>not_include</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – a list of words that must NOT be included in the samples from which to extract statistics</p></li>
+<li><p><strong>statistic_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – a list of the stastics that will be extracted using this rule</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>the extraction rule to be used in <cite>extract_samples</cite></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pyflowbat.pyflowbat.StatisticsExtraction" title="pyflowbat.pyflowbat.StatisticsExtraction">pyflowbat.pyflowbat.StatisticsExtraction</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.extract_statistic">
-<span class="sig-name descname"><span class="pre">extract_statistic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extraction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyflowbat.pyflowbat._StatisticsExtraction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statistc_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.extract_statistic" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">extract_statistic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extraction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyflowbat.pyflowbat.StatisticsExtraction" title="pyflowbat.pyflowbat.StatisticsExtraction"><span class="pre">pyflowbat.pyflowbat.StatisticsExtraction</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">statistc_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.extract_statistic" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -288,26 +411,136 @@
 <span id="pyflowbat-r-gating-module"></span><h2>pyflowbat.r_gating module<a class="headerlink" href="#module-pyflowbat.r_gating" title="Permalink to this headline"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyflowbat.r_gating.clust_2d_gate">
-<span class="sig-prename descclassname"><span class="pre">pyflowbat.r_gating.</span></span><span class="sig-name descname"><span class="pre">clust_2d_gate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_to_gate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gating_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_ready</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyflowbat.r_gating.clust_2d_gate" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">pyflowbat.r_gating.</span></span><span class="sig-name descname"><span class="pre">clust_2d_gate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_to_gate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FlowCal.io.FCSData</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gating_channel_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_r_ready</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FlowCal.io.FCSData</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyflowbat.r_gating.clust_2d_gate" title="Permalink to this definition"></a></dt>
+<dd><p>PyFlowBAT wrapper for the <cite>flowClust.2d</cite> function from the R <cite>OpenCyto</cite> library.
+For more, please see the OpenCyto documentation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_to_gate</strong> (<em>pyflowbat.pyflowbat.SampleCollection</em>) – the PyFlowBAT sample collection to gate;
+NOTE: this parameter is provided by the
+<cite>pyflowbat.pyflowbat.Workspace.apply_gate</cite> method and should
+NOT be specified by the user</p></li>
+<li><p><strong>gating_channel_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – the 2 channels to use for gating</p></li>
+<li><p><strong>target</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – the 2 dimenstional target around which to cluster</p></li>
+<li><p><strong>quantile</strong> (<em>float</em>) – the quantile provided to <cite>flowClust.2d</cite> for gating,
+defaults to 0.95</p></li>
+<li><p><strong>K</strong> (<em>int</em>) – the K provided to <cite>flowClust.2d</cite> for gating,
+defaults to 2</p></li>
+<li><p><strong>_r_ready</strong> (<em>bool</em>) – a boolean describing whether or not R functionality
+has been initialized forthis Workspace;
+NOTE: this parameter is provided by the
+<cite>pyflowbat.pyflowbat.Workspace.apply_gate</cite> method and should
+NOT be specified by the user</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the gated PyFlowBAT sample collection</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pyflowbat.pyflowbat.SampleCollection</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyflowbat.r_gating.singlet_gate">
-<span class="sig-prename descclassname"><span class="pre">pyflowbat.r_gating.</span></span><span class="sig-name descname"><span class="pre">singlet_gate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_to_gate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gating_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_ready</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyflowbat.r_gating.singlet_gate" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">pyflowbat.r_gating.</span></span><span class="sig-name descname"><span class="pre">singlet_gate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_to_gate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FlowCal.io.FCSData</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gating_channel_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_r_ready</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FlowCal.io.FCSData</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyflowbat.r_gating.singlet_gate" title="Permalink to this definition"></a></dt>
+<dd><p>PyFlowBAT wrapper for the <cite>singletGate</cite> function from the R <cite>OpenCyto</cite> library.
+For more, please see the OpenCyto documentation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_to_gate</strong> (<em>pyflowbat.pyflowbat.SampleCollection</em>) – the PyFlowBAT sample collection to gate;
+NOTE: this parameter is provided by the
+<cite>pyflowbat.pyflowbat.Workspace.apply_gate</cite> method and should
+NOT be specified by the user</p></li>
+<li><p><strong>gating_channel_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – the 2 channels to use for gating</p></li>
+<li><p><strong>_r_ready</strong> (<em>bool</em>) – a boolean describing whether or not R functionality
+has been initialized forthis Workspace;
+NOTE: this parameter is provided by the
+<cite>pyflowbat.pyflowbat.Workspace.apply_gate</cite> method and should
+NOT be specified by the user</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the gated PyFlowBAT sample collection</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pyflowbat.pyflowbat.SampleCollection</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyflowbat.r_gating.transitional_gate">
-<span class="sig-prename descclassname"><span class="pre">pyflowbat.r_gating.</span></span><span class="sig-name descname"><span class="pre">transitional_gate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_to_gate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gating_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_ready</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyflowbat.r_gating.transitional_gate" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">pyflowbat.r_gating.</span></span><span class="sig-name descname"><span class="pre">transitional_gate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_to_gate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FlowCal.io.FCSData</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gating_channel_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_r_ready</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FlowCal.io.FCSData</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyflowbat.r_gating.transitional_gate" title="Permalink to this definition"></a></dt>
+<dd><p>PyFlowBAT wrapper for the <cite>flowClust.2d</cite> translational gate function from the R <cite>OpenCyto</cite> library.
+For more, please see the OpenCyto documentation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_to_gate</strong> (<em>pyflowbat.pyflowbat.SampleCollection</em>) – the PyFlowBAT sample collection to gate;
+NOTE: this parameter is provided by the
+<cite>pyflowbat.pyflowbat.Workspace.apply_gate</cite> method and should
+NOT be specified by the user</p></li>
+<li><p><strong>gating_channel_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – the 2 channel names to use for gating</p></li>
+<li><p><strong>target</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – the 2 dimenstional target around which to cluster</p></li>
+<li><p><strong>quantile</strong> (<em>float</em>) – the quantile provided to <cite>flowClust.2d</cite> for gating,
+defaults to 0.95</p></li>
+<li><p><strong>K</strong> (<em>int</em>) – the K provided to <cite>flowClust.2d</cite> for gating,
+defaults to 2</p></li>
+<li><p><strong>translation</strong> (<em>float</em>) – the translation provided to <cite>flowClust.2d</cite> for gating,
+defaults to 0.15</p></li>
+<li><p><strong>_r_ready</strong> (<em>bool</em>) – a boolean describing whether or not R functionality
+has been initialized forthis Workspace;
+NOTE: this parameter is provided by the
+<cite>pyflowbat.pyflowbat.Workspace.apply_gate</cite> method and should
+NOT be specified by the user</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the gated PyFlowBAT sample collection</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pyflowbat.pyflowbat.SampleCollection</p>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 <section id="module-pyflowbat.r_gating_general">
 <span id="pyflowbat-r-gating-general-module"></span><h2>pyflowbat.r_gating_general module<a class="headerlink" href="#module-pyflowbat.r_gating_general" title="Permalink to this headline"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyflowbat.r_gating_general.general_r_gate">
-<span class="sig-prename descclassname"><span class="pre">pyflowbat.r_gating_general.</span></span><span class="sig-name descname"><span class="pre">general_r_gate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_to_gate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gating_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_function</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_ready</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyflowbat.r_gating_general.general_r_gate" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">pyflowbat.r_gating_general.</span></span><span class="sig-name descname"><span class="pre">general_r_gate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_to_gate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FlowCal.io.FCSData</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gating_channel_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_function</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_r_ready</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FlowCal.io.FCSData</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyflowbat.r_gating_general.general_r_gate" title="Permalink to this definition"></a></dt>
+<dd><p>PyFlowBAT wrapper for an arbitrary R function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_to_gate</strong> (<em>pyflowbat.pyflowbat.SampleCollection</em>) – the PyFlowBAT sample collection to gate;
+NOTE: this parameter is provided to by the
+<cite>pyflowbat.pyflowbat.Workspace.apply_gate</cite> method and should
+NOT be specified by the user</p></li>
+<li><p><strong>gating_channel_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – the channels to use for gating</p></li>
+<li><p><strong>r_file</strong> (<em>str</em>) – the path to the R file with the R function to use</p></li>
+<li><p><strong>r_function</strong> (<em>str</em>) – the function in the R file to use</p></li>
+<li><p><strong>arguments</strong> (<em>dict</em>) – the arguments to pass to the R function</p></li>
+<li><p><strong>_r_ready</strong> (<em>bool</em>) – a boolean describing whether or not R functionality
+has been initialized forthis Workspace;
+NOTE: this parameter is provided to by the
+<cite>pyflowbat.pyflowbat.Workspace.apply_gate</cite> method and should
+NOT be specified by the user</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the gated PyFlowBAT sample collection</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pyflowbat.pyflowbat.SampleCollection</p>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 <section id="module-pyflowbat">
