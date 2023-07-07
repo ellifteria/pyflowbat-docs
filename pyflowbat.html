@@ -380,8 +380,29 @@ defaults to True</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.calculate_beads_factors">
-<span class="sig-name descname"><span class="pre">calculate_beads_factors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beads_file_file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beads_fluorescent_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beads_num_pops</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beads_conversions_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'_std'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.calculate_beads_factors" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">calculate_beads_factors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beads_file_file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beads_fluorescent_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beads_num_pops</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beads_conversions_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'_std'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.calculate_beads_factors" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates the conversion factors for this workspace
+from a specified beads file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>beads_file_file_path</strong> (<em>str</em>) – the path to the beads file
+to calculate conversion factors from</p></li>
+<li><p><strong>beads_fluorescent_channels</strong> (<em>list</em><em>[</em><em>tuple</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – a list of tuples containing
+the names of the fluorescent channels and the corresponding
+MEFs;
+follows the pattern of:
+[(“channel 1”, “MEF 1”), (“channel 2”, “MEF 2”)]</p></li>
+<li><p><strong>beads_num_pops</strong> (<em>int</em>) – the number of beads populations in the
+beads file to calculate conversion factors from</p></li>
+<li><p><strong>beads_conversions_file</strong> (<em>str</em>) – the path to the file
+specifying the manufacturers bead conversion values,
+defaults to the PyFlowBAT standard beads values aka
+Spherotech RCP-30-5 Rainbow Calibration Beads</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.calculate_compensation_matrix">
@@ -430,7 +451,9 @@ defaults to True</p></li>
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.init_r">
 <span class="sig-name descname"><span class="pre">init_r</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">check_R_installation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.init_r" title="Permalink to this definition"></a></dt>
 <dd><p>Initialized R functionality for R language gating functions.
-NOTE: this method requires the R programming language to be installed.</p>
+NOTE: this method and R gating functionality both require
+the R programming language to be installed for features to
+work properly.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>check_R_installation</strong> (<em>bool</em>) – whether or not to check if the R
