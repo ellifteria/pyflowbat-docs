@@ -400,7 +400,23 @@ for the gated samples</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.apply_operation">
 <span class="sig-name descname"><span class="pre">apply_operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">statistics_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_statistics_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statistic_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_statistic_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.apply_operation" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Applies a specified operation to a statistic in a statistics collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>statistics_collection_name</strong> (<em>str</em>) – the name of the statistics collection to
+operate on</p></li>
+<li><p><strong>new_statistics_collection_name</strong> (<em>str</em>) – the name of the new statistics collection
+to create for the post-operation statistics</p></li>
+<li><p><strong>statistic_name</strong> (<em>str</em>) – the name of the statistic to operate on</p></li>
+<li><p><strong>new_statistic_name</strong> (<em>str</em>) – the name of the statistic to be created from
+the operation</p></li>
+<li><p><strong>operation</strong> (<em>function/Callable</em>) – the function defining the opperation to apply</p></li>
+<li><p><strong>**kwargs</strong> – keywords to pass to the operation</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.calculate_beads_factors">
