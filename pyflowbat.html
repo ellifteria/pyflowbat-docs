@@ -608,7 +608,7 @@ for the compensated samples</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.apply_gate">
-<span class="sig-name descname"><span class="pre">apply_gate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_sample_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gating_function</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_plots</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gating_channel_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">['FSC-A',</span> <span class="pre">'SSC-A']</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.apply_gate" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">apply_gate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_sample_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gating_function</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_plots</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gating_channel_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">['FSC-A',</span> <span class="pre">'SSC-A']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_override</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.apply_gate" title="Permalink to this definition">#</a></dt>
 <dd><p>Applies a specified gate to a sample collection.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -620,12 +620,13 @@ for the gated samples</p></li>
 <li><p><strong>output_plots</strong> (<em>int</em>) – the number of plots to visualize if full output is true,
 defaults to 5</p></li>
 <li><p><strong>gating_channel_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – the channels to visualize,
-if gating_channel_names is defined, uses the first two
+if has more than one element, uses the first two
 elements
-if gating_channel_name is defined, uses that value twice,
-if none are defined,</p></li>
-<li><p><strong>output_override_value</strong> (<em>bool</em>) – if provided, workspace will use this value
-instead of its <cite>full_output</cite> variable</p></li>
+if has one element, uses that value twice,
+defaults to <cite>[“FSC-A”, “SSC-A”]</cite></p></li>
+<li><p><strong>output_override</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – if not <cite>None</cite>, workspace will use this
+instead of its <cite>full_output</cite> variable,
+defaults to None</p></li>
 <li><p><strong>**kwargs</strong> – keywords to pass to the gating function</p></li>
 </ul>
 </dd>
@@ -767,14 +768,14 @@ of the combination should be calculated</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyflowbat.pyflowbat.Workspace.extract_statistic">
-<span class="sig-name descname"><span class="pre">extract_statistic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extraction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyflowbat.pyflowbat.StatisticsExtraction" title="pyflowbat.pyflowbat.StatisticsExtraction"><span class="pre">pyflowbat.pyflowbat.StatisticsExtraction</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">statistc_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.extract_statistic" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">extract_statistic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extraction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyflowbat.pyflowbat.StatisticsExtraction" title="pyflowbat.pyflowbat.StatisticsExtraction"><span class="pre">pyflowbat.pyflowbat.StatisticsExtraction</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">statistic_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyflowbat.pyflowbat.Workspace.extract_statistic" title="Permalink to this definition">#</a></dt>
 <dd><p>Extracts a statistic for a StatisticExtraction rule.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>extraction</strong> (<a class="reference internal" href="#pyflowbat.pyflowbat.StatisticsExtraction" title="pyflowbat.pyflowbat.StatisticsExtraction"><em>pyflowbat.pyflowbat.StatisticsExtraction</em></a>) – the StatisticExtraction rule to use for the
 extraction</p></li>
-<li><p><strong>statistc_name</strong> (<em>str</em>) – the name of the statistic being created</p></li>
+<li><p><strong>statistic_name</strong> (<em>str</em>) – the name of the statistic being created</p></li>
 <li><p><strong>operation</strong> (<em>function/Callable</em>) – the function defining the operation defining
 the extraction</p></li>
 <li><p><strong>**kwargs</strong> – keywords to pass to the operation</p></li>
@@ -800,7 +801,7 @@ an arbitrary number of SPECIFICATION_TUPLEs can be included;
 an arbitrary number of these lists can be included to define different scatter
 plots in one figure</p></li>
 <li><p><strong>errors</strong> (<em>tuple</em><em>[</em><em>bool</em><em>, </em><em>bool</em><em>]</em>) – if x and y axis errors should be included; only
-one tuple can be provided for the entire figue,
+one tuple can be provided for the entire figure,
 defaults to (False, False)</p></li>
 <li><p><strong>legend</strong> (<em>Optional</em><em>[</em><em>list</em><em>[</em><em>str</em><em>]</em><em>]</em>) – the legend for the plot,
 defaults to None</p></li>
@@ -953,7 +954,7 @@ NOTE: this parameter is provided by the
 NOT be specified by the user</p></li>
 <li><p><strong>gating_channel_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – the 2 channels to use for gating</p></li>
 <li><p><strong>_r_ready</strong> (<em>bool</em>) – a boolean describing whether or not R functionality
-has been initialized forthis Workspace;
+has been initialized for this Workspace;
 NOTE: this parameter is provided by the
 <cite>pyflowbat.pyflowbat.Workspace.apply_gate</cite> method and should
 NOT be specified by the user</p></li>
